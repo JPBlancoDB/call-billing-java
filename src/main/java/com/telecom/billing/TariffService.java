@@ -1,5 +1,6 @@
 package com.telecom.billing;
 
+import com.telecom.domain.CallTypes;
 import com.telecom.domain.Tariff;
 import com.telecom.domain.TariffTypes;
 

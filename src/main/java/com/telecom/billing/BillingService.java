@@ -1,6 +1,7 @@
 package com.telecom.billing;
 
 import com.telecom.domain.Call;
+import com.telecom.domain.CallTypes;
 
 import java.util.List;
 
@@ -11,10 +12,13 @@ public class BillingService {
         double totalAmount = 0d;
 
         for (Call call : callHistory) {
-            totalAmount += TariffService.calculate(call.getTariffType(), call.getMinutes());
+            double amount = TariffService.calculate(call.getTariffType(), call.getMinutes());
+            totalAmount += CallTypeService.calculate(call.getCallType(), amount);
         }
 
         return totalAmount;
     }
+
+
 
 }
